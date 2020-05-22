@@ -1,0 +1,32 @@
+﻿@model MasterASP.Models.Product
+
+@{
+    ViewBag.Title = "ProductView";
+}
+
+<h2>ProductView</h2>
+
+
+<div class="container" style="align-items:center">
+    
+    <div class="card" style="width: 18rem;align-items:center;margin-left:40%">
+        <img src="~/@Model.ImageProduct" class="card-img-top" alt="...">
+        <div class="container card-body">
+            <div class="container text-center">
+                <form asp-action="ProductView" method="post">
+                    <input type="hidden" name="ProductId" value="@Model.ProductId" />
+                    <h5 class=" card-title">Product</h5>
+                    <p class=" card-text">@Model.ProductName</p><br />
+                    <p class="card-text">ราคา @Model.UnitPrice บาท</p><br />
+                    <p class="card-text">ราคา @Model.Discontinued บาท</p><br />
+                    <button type="submit" class="btn btn-primary">Add to Cart</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ProductId }) |
+    
+    @Html.ActionLink("Back to List", "Index")
+</p>

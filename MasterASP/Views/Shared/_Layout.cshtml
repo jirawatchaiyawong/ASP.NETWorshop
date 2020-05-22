@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @*<style>
+        body {
+            background-color: #cdd5e3;
+        }
+    </style>*@
+</head>
+     
+<body>
+    
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #e3f2fd;">
+            <a class="navbar-brand" href="">@Html.ActionLink("Equalizer", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                    <li class="nav-link">@Html.ActionLink("Contact", "Contact", "Home")</li>
+
+                    <li class="nav-item">
+                    <li class="nav-link">@Html.ActionLink("Category", "Index", "Categories")</li>
+
+                    <li class="nav-item">
+                    <li class="nav-link">@Html.ActionLink("Product", "Index", "Products")</li>
+
+                    <li class="nav-item">
+                    <li class="nav-link">@Html.ActionLink("Cart", "Index", "Carts")</li>
+
+                </ul>
+                <span class="navbar-text">
+
+                    @Html.Partial("_LoginPartial")
+                </span>
+            </div>
+        </nav>
+
+    
+    <div class="">
+        @RenderBody()
+        <hr />
+        <footer>
+
+            <div class="text-center"><p>&copy; @DateTime.Now.Year - Super Equalizer Shop</p></div>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
